@@ -1,7 +1,7 @@
 <?php
     /*
     Plugin Name: Auto Scheduling
-    Plugin URI: https://www.hernantas.com/autoschedule
+    Plugin URI: https://github.com/hernantas/WPAutoSchedule
     Description: Wordpress plugin to automatically set your post schedule.
     Version: 1.0
     Author: Zulfikar Raditya Hernanta
