@@ -101,7 +101,7 @@
         public function time_callback( $optName, $day ) {
             $opts = '';
             for ($h = 0; $h < 24; $h++) {
-                for ($m = 0; $m < 60; $m+= 30) {
+                for ($m = 0; $m < 60; $m+= 60) {
                     $selected = false;
                     $name = sprintf('%1$02d%02$02d', $h, $m);
                     $display = sprintf('%1$02d:%02$02d', $h, $m);
