@@ -89,7 +89,7 @@
         public function script_init() {
             global $post;
 
-            if ( $this->is_in_editor() ) {
+            if ( $this->is_in_editor() && $this->is_post_drafted( get_the_id() ) ) {
                 wp_enqueue_script( 'autoschedule', PLUGIN_URL . 'js/autoschedule.js' );
                 wp_localize_script( 'autoschedule', 'autoschedule', [
                     'scheduledCounter' => $this->get_all_scheduled_post(),
