@@ -77,7 +77,7 @@
                 $ninput[ 'time_from_'.$day ] = $this->sanitize_clock( $input[ 'time_from_'.$day ] );
                 $ninput[ 'time_to_'.$day ] = $this->sanitize_clock( $input[ 'time_to_'.$day ] );
             }
-            $ninput[ 'only_schedule' ] = ( $input[ 'only_schedule' ] == 'true' ? 'true' : 'false' );
+            $ninput[ 'only_schedule' ] = $this->sanitize_bool( $input[ 'only_schedule' ] );
             return $ninput;
         }
 
@@ -89,6 +89,10 @@
 
         private function math_clamp( $number, $min, $max ) {
             return min( max( $number, $min ), $max );
+        }
+
+        private function sanitize_bool( $b ) {
+            return $b == 'true' ? 'true' : 'false';
         }
 
         /** 
