@@ -81,7 +81,7 @@
 
             info.append( $( '<div>' + ( 
                 strDate + ': <span '+ ( curAvail ? 'style="color: #009900"' :  'style="color: #993333"' ) +'>' + 
-                ( curAvail ? 'available' : 'full' ) + 
+                ( curAvail ? 'Available' : 'Full' ) + 
                 " [" + getCounter( strDate ) + ' of ' + autoschedule.options['day_'+getDay( strDate )] + "]</span>"
             ) + '</div>' ) );
         }
