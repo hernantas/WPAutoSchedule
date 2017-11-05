@@ -8,4 +8,8 @@
     Author URI: https://www.hernantas.com
     License: MIT
     */
+
+    define( 'AutoSchedule\PLUGIN_PATH' , plugin_dir_path(__FILE__) );
+    define( 'AutoSchedule\PLUGIN_URL' , plugin_dir_url(__FILE__) );
+
 ?>
