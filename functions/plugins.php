@@ -3,6 +3,7 @@
 
     class Plugins {
         private $draft_status = ['pending', 'draft', 'auto-draft'];
+        private $publish_status = ['publish', 'future', 'private'];
 
         public function __construct() {
             add_action( 'admin_notices', array( $this, 'script_init' ) );
@@ -22,6 +23,10 @@
 
         public function is_post_drafted( $id ) {
             return in_array( get_post_status( $id ), $this->draft_status );
+        }
+
+        public function is_post_published( $id ) {
+            return in_array( get_post_status( $id ), $this->publish_status );
         }
 
         public function get_all_scheduled_post() {
