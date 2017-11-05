@@ -84,6 +84,10 @@
                 ( curAvail ? 'Available' : 'Full' ) + 
                 " [" + getCounter( strDate ) + ' of ' + autoschedule.options['day_'+getDay( strDate )] + "]</span>"
             ) + '</div>' ) );
+
+            if (i >= 5) {
+                info.find('div').first().remove();
+            }
         }
 
         schdl.append(info);
