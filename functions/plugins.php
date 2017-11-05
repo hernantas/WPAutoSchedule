@@ -59,6 +59,33 @@
             return $counter;
         }
 
+        public function get_option() {
+            return wp_parse_args( get_option( 'auto_schedule_options' ), [
+               "day_sunday" => 0, 
+               "time_from_sunday" => "0800", 
+               "time_to_sunday" => "1600", 
+               "day_monday" => 1, 
+               "time_from_monday" => "1800", 
+               "time_to_monday" => "1600", 
+               "day_tuesday" => 1, 
+               "time_from_tuesday" => "0800", 
+               "time_to_tuesday" => "1600", 
+               "day_wednesday" => 1, 
+               "time_from_wednesday" => "0800", 
+               "time_to_wednesday" => "1600", 
+               "day_thursday" => 1, 
+               "time_from_thursday" => "0800", 
+               "time_to_thursday" => "1600", 
+               "day_friday" => 1, 
+               "time_from_friday" => "0800", 
+               "time_to_friday" => "1600", 
+               "day_saturday" => 0, 
+               "time_from_saturday" => "0800", 
+               "time_to_saturday" => "1600", 
+               "only_schedule" => "true"
+            ]);
+        }
+
         public function script_init() {
             global $post;
 
@@ -66,7 +93,7 @@
                 wp_enqueue_script( 'autoschedule', PLUGIN_URL . 'js/autoschedule.js' );
                 wp_localize_script( 'autoschedule', 'autoschedule', [
                     'scheduledCounter' => $this->get_all_scheduled_post(),
-                    'options' => get_option( 'auto_schedule_options' )
+                    'options' => $this->get_option( 'auto_schedule_options' )
                 ] );
             }
         }        
