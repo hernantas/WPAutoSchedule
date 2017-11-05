@@ -152,7 +152,7 @@
                 ($schedule_only == true ? 'checked="checked"' : ''));
             printf(' <label><input type="radio" name="auto_schedule_options[only_schedule]" %1$s value="false" />With Publish</label>',
                 ($schedule_only == false ? 'checked="checked"' : ''));
-            printf('<div><textarea>%1$s</textarea></div>', $this->arr_to_str($this->options));
+            // printf('<div><textarea>%1$s</textarea></div>', $this->arr_to_str($this->options));
         }
 
         private function arr_to_str( $array ) {
