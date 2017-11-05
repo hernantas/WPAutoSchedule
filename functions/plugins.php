@@ -30,19 +30,30 @@
         }
 
         public function get_all_scheduled_post() {
+            $today = getdate();
             $query = array(
-                'post_status' => ['future']   
+                'post_status' => $this->publish_status,
+                'date_query' => array(
+                    array(
+                        'year'  => $today['year'],
+                        'month' => $today['mon'],
+                        'day'   => $today['mday']
+                    ),
+                    'compare' => '>='
+                ),
             );
     
             $counter = [];
             $loop = new \WP_Query( $query );
     
             foreach ( $loop->get_posts() as $post ) {
-                $date = date( 'd-m-Y', strtotime( $post->post_date ) );
+                $time = strtotime( $post->post_date );
+                $date = date( 'd-m-Y', $time );
+                $day = strtolower( date( 'l', $time ) );
                 if ( !isset( $counter[ $date ] ) ) {
-                    $counter[ $date ] = 0;
+                    $counter[ $date ] = [ 0, $day ];
                 }
-                $counter[ $date ]++;
+                $counter[ $date ][0]++;
             }
 
             return $counter;
