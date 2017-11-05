@@ -94,6 +94,12 @@
         btn.click(function() {
             $(".edit-timestamp").click();
             changeSelectDate();
+            $(".save-timestamp").click();
+            $("#timestampdiv").hide();
+
+            if (autoschedule.options.only_schedule != 'true') {
+                $("#publish").click();
+            }
         });
     });
 })( jQuery );
