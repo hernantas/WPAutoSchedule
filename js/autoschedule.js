@@ -33,7 +33,7 @@
     }
 
     function getTimeTo( day ) {
-        return autoschedule.options['time_from_'+day];
+        return autoschedule.options['time_to_'+day];
     }
 
     function compareDay( day, counter ) {
@@ -52,8 +52,10 @@
 
         let tf = getTimeFrom( nextDay );
         let tt = getTimeTo( nextDay );
-        $( '#hh' ).val( randomRange( parseInt(tf.substr(0, 2)), parseInt(tt.substr(0, 2)) ) );
-        $( '#mn' ).val( randomRange( 0, 59 ) );
+        let hf = parseInt(tf.substr(0, 2));
+        let ht = parseInt(tt.substr(0, 2));
+        $( '#hh' ).val( randomRange( hf, ht ) );
+        $( '#mn' ).val( ( ht != hf ) ? randomRange( 0, 59 ) : formatDate( 0 ) );
     }
     
     $(document).ready(function() {
