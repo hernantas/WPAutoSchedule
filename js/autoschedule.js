@@ -57,6 +57,17 @@
         $( '#hh' ).val( randomRange( hf, ht ) );
         $( '#mn' ).val( ( ht != hf ) ? randomRange( 0, 59 ) : formatDate( 0 ) );
     }
+
+    function setScheduleTime() {
+        $(".edit-timestamp").click();
+        changeSelectDate();
+        $(".save-timestamp").click();
+        $("#timestampdiv").hide();
+
+        if (autoschedule.options.only_schedule != 'true') {
+            $("#publish").click();
+        }
+    }
     
     $(document).ready(function() {
         let schdl = $('#misc-publishing-actions');
@@ -96,14 +107,7 @@
         schdl.append(sub);
 
         btn.click(function() {
-            $(".edit-timestamp").click();
-            changeSelectDate();
-            $(".save-timestamp").click();
-            $("#timestampdiv").hide();
-
-            if (autoschedule.options.only_schedule != 'true') {
-                $("#publish").click();
-            }
+            setScheduleTime();     
         });
     });
 })( jQuery );
