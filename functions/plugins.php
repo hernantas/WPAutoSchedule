@@ -90,10 +90,11 @@
             global $post;
 
             if ( $this->is_in_editor() && $this->is_post_drafted( get_the_id() ) ) {
+                // Insert javascript
                 wp_enqueue_script( 'autoschedule', PLUGIN_URL . 'js/autoschedule.js' );
                 wp_localize_script( 'autoschedule', 'autoschedule', [
-                    'scheduledCounter' => $this->get_all_scheduled_post(),
-                    'options' => $this->get_option( 'auto_schedule_options' )
+                    'scheduledCounter' => $this->get_all_scheduled_post(),  // Add all scheduled post in the future date
+                    'options' => $this->get_option( 'auto_schedule_options' ) // Add all option for the plugin page
                 ] );
             }
         }        
