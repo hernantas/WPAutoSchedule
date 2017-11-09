@@ -4,7 +4,7 @@ Donate link: http://www.hernantas.com/
 Tags: automatic, schedule, custom, date, default, future
 Requires at least: 4.4
 Tested up to: 4.8.3
-Stable tag: trunk
+Stable tag: 1.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -30,7 +30,9 @@ This javascript do not have any data communication with the server (since I don'
 
 == Screenshots ==
 
-1. https://www.hernantas.com/wp-content/uploads/2017/11/Screen-Shot-2017-11-06-at-2.32.13-PM-400x212.png
+1. https://ps.w.org/auto-scheduling/assets/screenshot-1.png
+2. https://ps.w.org/auto-scheduling/assets/screenshot-2.png
+3. https://ps.w.org/auto-scheduling/assets/screenshot-3.png
 
 == Changelog ==
 
