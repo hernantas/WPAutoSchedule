@@ -13,10 +13,16 @@ Wordpress plugin to automatically set your post schedule.
 == Description ==
 
 The purpose of this plugin is for automatically set the scheduled date just with one click. This is useful since it not that convenient to set schedule in WordPress. The plugin can set the date (including the month and the year) & time (hour & minutes) automatically and can be changed from the settings page.
+
+Please see the screenshots to see how it look like.
+
 This plugin works by adding a button in the post editor page, but this button only shows for the drafted post to avoid cluttering the editor page. When the button is clicked, the plugin will find the date that is available (have a less scheduled post than the limit). If there is some date that available, the plugin will assign the nearest available future date.
+
 However, to automatically set the schedule set for you, this plugin will add single javascript only when you are in the editor. What this javascript do is:
+
 1. Find the date that are available based on data generated in PHP.
 2. Set the schedule in the page.
+
 This javascript do not have any data communication with the server (since I don't know how anyway). This javascript only set the schedule from the element in the editor page such as edit button, publish button, etc. This is really simple plugin after all.
 
 == Installation ==
