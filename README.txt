@@ -3,7 +3,7 @@ Contributors: hernantas
 Donate link: http://www.hernantas.com/
 Tags: automatic, schedule, custom, date, default, future
 Requires at least: 4.4
-Tested up to: 4.8.3
+Tested up to: 4.9.1
 Stable tag: 1.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
